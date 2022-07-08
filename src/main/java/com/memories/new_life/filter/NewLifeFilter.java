@@ -42,7 +42,7 @@ public class NewLifeFilter implements Filter {
 			log.info("Access token for request => " + accessToken);
 			filterChain.doFilter(request, response);
 		} else if (skippedUris.contains(request.getRequestURI()) || request.getRequestURI().contains("/getImage")
-				|| request.getRequestURI().contains("/css") || request.getRequestURI().contains("/js")) {
+				|| request.getRequestURI().contains("/css") || request.getRequestURI().contains("/js")||request.getRequestURI().contains("/sendOtp")) {
 			filterChain.doFilter(request, response);
 		} else {
 			response.sendRedirect(String.valueOf(request.getContextPath()) + "/login");

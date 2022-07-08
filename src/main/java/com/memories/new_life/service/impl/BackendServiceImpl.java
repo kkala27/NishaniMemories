@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import com.memories.new_life.azure.AzureAdapter;
@@ -27,6 +28,12 @@ public class BackendServiceImpl implements BackendService {
 	@Autowired
 	ValidateOtpRepo repo;
 
+	@Value("${send.otp}")
+	private boolean sendOtp;
+	
+	@Value("${test.otp}")
+	private String testOtp;
+
 	@Override
 	public byte[] getFile(String fileName) {
 		byte[] data = adapter.getFile(fileName);
@@ -41,7 +48,12 @@ public class BackendServiceImpl implements BackendService {
 
 	@Override
 	public String sendOtp(String num) {
-		String otp = generateOtp();
+		String otp = "";
+		if (sendOtp) {
+		 otp = generateOtp();
+		} else {
+			otp = testOtp;
+		}
 		List<ValidateOtpEntity> validOtps = repo.findByPhoneNumber(num);
 		validOtps.forEach(x -> {
 			x.setIsValid(false);
@@ -54,7 +66,7 @@ public class BackendServiceImpl implements BackendService {
 		entity.setTimestamp(new Timestamp(new Date().getTime()));
 		repo.save(entity);
 		String message = "Please use the otp " + otp + " to login to the #nishani application";
-		String result = SendMessage.sendMessage(num, message);
+		String result = SendMessage.sendMessage(num, message, sendOtp);
 		log.info("Send OTP result => " + result);
 		return result;
 	}

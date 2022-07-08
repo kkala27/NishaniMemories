@@ -45,31 +45,39 @@ public class BackendController {
 	}
 
 	@PostMapping("/validateOtp")
-	public ModelAndView validateOtp(@RequestParam("otp") String otp, ModelMap model,
-			HttpServletRequest request, HttpServletResponse response) {
+	public ModelAndView validateOtp(@RequestParam("otp") String otp, ModelMap model, HttpServletRequest request,
+			HttpServletResponse response) {
 		ModelAndView modelAndView = new ModelAndView();
 		String num = request.getSession().getAttribute("number").toString();
 		log.info("Inside validate otp for phone number => " + num + " and otp =>" + otp);
-			if (service.validateOtp("+91"+num)) {
-				modelAndView.setViewName("welcome");
-				request.getSession().setAttribute("access-token", Utility.getAccessToken());
-			} else {
-				modelAndView.setViewName("login-form");
-				model.addAttribute("error", "Invalid OTP");
-			}
+		if (service.validateOtp("+91" + num)) {
+			modelAndView.setViewName("welcome");
+			request.getSession().setAttribute("access-token", Utility.getAccessToken());
+		} else {
+			modelAndView.setViewName("login-form");
+			model.addAttribute("error", "Invalid OTP");
+		}
 		return modelAndView;
 	}
-	
+
 	@PostMapping("/generateOtp")
-	public ModelAndView generateOtp(@RequestParam("num") String num, ModelMap model,
-			HttpServletRequest request, HttpServletResponse response) {
+	public ModelAndView generateOtp(@RequestParam("num") String num, ModelMap model, HttpServletRequest request,
+			HttpServletResponse response) {
 		ModelAndView modelAndView = new ModelAndView();
-		log.info("Inside generateOtp for phone number => " + num );
-			String result = service.sendOtp("+91"+num);
-			modelAndView.setViewName("login-form");
-			model.addAttribute("result",result);
-			request.getSession().setAttribute("number", num);
+		log.info("Inside generateOtp for phone number => " + num);
+		String result = service.sendOtp("+91" + num);
+		modelAndView.setViewName("login-form");
+		model.addAttribute("result", result);
+		request.getSession().setAttribute("number", num);
 		return modelAndView;
+	}
+
+	@RequestMapping(value = "/sendOtp/{num}")
+	@ResponseBody
+	public String sendOtp(@PathVariable String num, HttpServletRequest request) {
+		log.info("Inside sendOtp for number  => " + num);
+		request.getSession().setAttribute("number", num);
+		return service.sendOtp("+91" + num);
 	}
 
 }
