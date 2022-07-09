@@ -1,6 +1,17 @@
 
  
-const serverUrl = 'https://nishani-memories.herokuapp.com/';
+
+ let serverUrl = '';
+
+window.onload = function() {
+  console.log("loading login page");
+  var profile = document.getElementById("profile").value;
+  if(profile=='local'){
+	   serverUrl = 'http://localhost:8080/'; 
+  }else{
+	   serverUrl = 'https://nishani-memories.herokuapp.com/'
+  }
+};
 
 generateOtp =   function(){
     console.log("Calling java script for send OTP");
@@ -40,4 +51,5 @@ generateOtp =   function(){
         	    }
         }
     }
+    
 }  

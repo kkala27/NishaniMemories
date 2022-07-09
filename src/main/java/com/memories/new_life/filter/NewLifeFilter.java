@@ -25,6 +25,9 @@ public class NewLifeFilter implements Filter {
 
 	@Value("${app.skippeduri.string}")
 	String skippedUriString;
+	
+	@Value("${app.active.profile}")
+	String activeProfile;
 
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
@@ -36,6 +39,9 @@ public class NewLifeFilter implements Filter {
 			throws IOException, ServletException {
 		HttpServletRequest request = (HttpServletRequest) servletRequest;
 		HttpServletResponse response = (HttpServletResponse) servletResponse;
+		if(request.getSession().getAttribute("profile")==null) {
+			request.getSession().setAttribute("profile", activeProfile);
+		}
 		List<String> skippedUris = getSkippedUris();
 		if (request.getSession().getAttribute("access-token") != null) {
 			String accessToken = request.getSession().getAttribute("access-token").toString();

@@ -1,18 +1,14 @@
 package com.memories.new_life.controllers;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,7 +17,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.memories.new_life.notification.SendMessage;
+import com.memories.new_life.notification.SendEmail;
+import com.memories.new_life.notification.SendWhatsapp;
 import com.memories.new_life.service.BackendService;
 import com.memories.new_life.utils.Utility;
 
@@ -33,9 +30,15 @@ public class BackendController {
 
 	@Value("${images.path}")
 	private String imagePath;
+	
+	@Value("${app.active.profile}")
+	String activeProfile;
 
 	@Autowired
 	BackendService service;
+	
+	@Autowired 
+	SendEmail sendMail;
 
 	@RequestMapping(value = "/getImage/{imageId}")
 	@ResponseBody
@@ -79,5 +82,13 @@ public class BackendController {
 		request.getSession().setAttribute("number", num);
 		return service.sendOtp("+91" + num);
 	}
+	
+	
+	@RequestMapping(value = "/sendBirthdayUpdates")
+	@ResponseBody
+	public String getTime(HttpServletRequest request) throws IOException {
+		return service.sendBirthdayUpdates();
+	}
+
 
 }
