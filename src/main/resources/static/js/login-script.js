@@ -1,11 +1,13 @@
 
+ 
+const serverUrl = 'https://nishani-memories.herokuapp.com/';
 
 generateOtp =   function(){
     console.log("Calling java script for send OTP");
     console.log(document.getElementById("num").value);
     var result;
     const request = new XMLHttpRequest();
-    const url = 'http://localhost:8080/sendOtp/'+document.getElementById("num").value;
+    const url =  serverUrl+'sendOtp/'+document.getElementById("num").value;
     request.open("GET", url);
     request.send();
 
@@ -25,7 +27,7 @@ generateOtp =   function(){
     
     resendOtp = function(){
         const request = new XMLHttpRequest();
-        const url = 'http://localhost:8080/sendOtp/'+document.getElementById("num").value;
+        const url = serverUrl+'sendOtp/'+document.getElementById("num").value;
         request.open("GET", url);
         request.send();
 
