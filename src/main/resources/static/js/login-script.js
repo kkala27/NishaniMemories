@@ -31,7 +31,7 @@ generateOtp =   function(){
     	    	displayStatusDiv1.style.display = 'none';
     	    	displayStatusDiv2.style.display = 'block';
     	    }else if( result == 'Authenticate' ){
-    	    	displayStatus.style.display = 'block';
+    	    	displayStatusDiv1.style.display = 'block';
     	    	displayStatusDiv2.style.display = 'none';
     	    }
     }
