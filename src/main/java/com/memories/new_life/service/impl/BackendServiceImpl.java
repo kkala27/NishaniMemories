@@ -39,6 +39,9 @@ public class BackendServiceImpl implements BackendService {
 	@Autowired
 	SendEmail sendEmail;
 
+	@Value("${otp.message}")
+	private String otpMessage;
+	
 	@Value("${send.message}")
 	private boolean sendMessage;
 
@@ -91,7 +94,9 @@ public class BackendServiceImpl implements BackendService {
 		entity.setIsValid(true);
 		entity.setTimestamp(new Timestamp(new Date().getTime()));
 		repo.save(entity);
-		String message = "Please use the otp " + otp + " to login to the #nishani application";
+		Map<String,String> replacementMap  = new HashMap<>();
+		replacementMap.put("%otp%", otp);
+		String message = Utility.replaceStringFromEmailBody(otpMessage, replacementMap);
 		String result = SendMessage.sendMessage(num, message, sendMessage);
 		log.info("Send OTP result => " + result);
 		return result;
