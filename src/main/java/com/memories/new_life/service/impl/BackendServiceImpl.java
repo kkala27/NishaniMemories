@@ -1,7 +1,5 @@
 package com.memories.new_life.service.impl;
 
-import java.io.IOException;
-import java.math.BigInteger;
 import java.sql.Timestamp;
 import java.text.DecimalFormat;
 import java.util.Arrays;
@@ -16,10 +14,12 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import com.memories.new_life.azure.AzureAdapter;
+import com.memories.new_life.model.PropertiesEntity;
 import com.memories.new_life.model.ValidateOtpEntity;
 import com.memories.new_life.notification.SendEmail;
 import com.memories.new_life.notification.SendMessage;
 import com.memories.new_life.notification.SendWhatsapp;
+import com.memories.new_life.repo.PropertiesRepo;
 import com.memories.new_life.repo.ValidateOtpRepo;
 import com.memories.new_life.service.BackendService;
 import com.memories.new_life.utils.Utility;
@@ -37,13 +37,22 @@ public class BackendServiceImpl implements BackendService {
 	ValidateOtpRepo repo;
 
 	@Autowired
+	PropertiesRepo propertiesRepo;
+
+	@Autowired
 	SendEmail sendEmail;
+
+	@Autowired
+	SendMessage sendMessage;
+
+	@Autowired
+	SendWhatsapp sendWhatsapp;
 
 	@Value("${otp.message}")
 	private String otpMessage;
-	
+
 	@Value("${send.message}")
-	private boolean sendMessage;
+	private boolean isSendMessage;
 
 	@Value("${test.otp}")
 	private String testOtp;
@@ -78,7 +87,7 @@ public class BackendServiceImpl implements BackendService {
 	@Override
 	public String sendOtp(String num) {
 		String otp = "";
-		if (sendMessage) {
+		if (isSendMessage) {
 			otp = generateOtp();
 		} else {
 			otp = testOtp;
@@ -94,10 +103,10 @@ public class BackendServiceImpl implements BackendService {
 		entity.setIsValid(true);
 		entity.setTimestamp(new Timestamp(new Date().getTime()));
 		repo.save(entity);
-		Map<String,String> replacementMap  = new HashMap<>();
+		Map<String, String> replacementMap = new HashMap<>();
 		replacementMap.put("%otp%", otp);
 		String message = Utility.replaceStringFromEmailBody(otpMessage, replacementMap);
-		String result = SendMessage.sendMessage(num, message, sendMessage);
+		String result = sendMessage.sendMessage(num, message, isSendMessage);
 		log.info("Send OTP result => " + result);
 		return result;
 	}
@@ -128,11 +137,31 @@ public class BackendServiceImpl implements BackendService {
 			sendEmail.sendEmail(recieverEmails, birthdayReminderSubject, body);
 			List<String> recieverNumbersList = Arrays.asList(recieverNumbers.split(","));
 			recieverNumbersList.forEach(num -> {
-				SendMessage.sendMessage(num, messageString, sendMessage);
-				SendWhatsapp.sendWhatsapp(num, messageString, sendMessage);
+				sendMessage.sendMessage(num, messageString, isSendMessage);
+				sendWhatsapp.sendWhatsapp(num, messageString, isSendMessage);
 			});
 		} catch (Exception e) {
-			log.error("Error occured while sending birthday reminders "+e.getMessage());
+			log.error("Error occured while sending birthday reminders " + e.getMessage());
+			result = "failure";
+		}
+		return result;
+	}
+
+	@Override
+	public String updatePropertiesValue(PropertiesEntity entity) {
+		String result = "success";
+		try {
+			PropertiesEntity dbEntity = propertiesRepo.findByKey(entity.getKey());
+			if (dbEntity != null) {
+				log.info("Updating value for existing key");
+				dbEntity.setValue(entity.getValue());
+				propertiesRepo.save(dbEntity);
+			} else {
+				log.info("Adding new property");
+				propertiesRepo.save(entity);
+			}
+		} catch (Exception e) {
+			log.error(e.getMessage());
 			result = "failure";
 		}
 		return result;

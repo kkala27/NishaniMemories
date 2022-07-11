@@ -1,7 +1,6 @@
 package com.memories.new_life.controllers;
 
 import java.io.IOException;
-import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,14 +10,15 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.memories.new_life.model.PropertiesEntity;
 import com.memories.new_life.notification.SendEmail;
-import com.memories.new_life.notification.SendWhatsapp;
 import com.memories.new_life.service.BackendService;
 import com.memories.new_life.utils.Utility;
 
@@ -90,5 +90,17 @@ public class BackendController {
 		return service.sendBirthdayUpdates();
 	}
 
+	
+	@PostMapping("/changeProperties")
+	public String updateProperties(@RequestBody PropertiesEntity entity) {
+		String result = service.updatePropertiesValue(entity);
+		return "success";
+	}
 
+	@RequestMapping(value = "/sendTestOtp")
+	@ResponseBody
+	public String sendTestOtp(HttpServletRequest request) throws IOException {
+		return service.sendOtp("+919999707559");
+	}
+	
 }

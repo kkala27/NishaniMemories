@@ -4,6 +4,8 @@ import java.io.IOException;
 
 import org.springframework.stereotype.Service;
 
+import com.memories.new_life.model.PropertiesEntity;
+
 @Service
 public interface BackendService {
 
@@ -16,5 +18,7 @@ public interface BackendService {
 	public Boolean validateOtp(String num);
 
 	public String sendBirthdayUpdates();
+
+	public String updatePropertiesValue(PropertiesEntity entity);
 
 }
