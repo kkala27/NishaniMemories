@@ -33,14 +33,29 @@ public class FrontendController {
 	public ModelAndView getImage(@PathVariable Integer slideId, HttpServletRequest request) {
 		log.info("Request for new slide recieved with slide id => "+slideId);
 		ModelAndView modelAndView = new ModelAndView();
-		switch(slideId) {
-		case 1: modelAndView.setViewName("slide1");
-		break;
-		case 2:modelAndView.setViewName("slide2");
-			break;
-		case 3:modelAndView.setViewName("slide3");
-			break;
-		}
+	//	switch(slideId) {
+//		case 1: modelAndView.setViewName("slide1");
+//		break;
+//		case 2:modelAndView.setViewName("slide2");
+//			break;
+//		case 4:modelAndView.setViewName("slide3");
+//			break;
+//		case 5:modelAndView.setViewName("slide4");
+//		break;
+//		case 6:modelAndView.setViewName("slide5");
+//		break;
+//		case 7:modelAndView.setViewName("slide6");
+//		break;
+//		case 8:modelAndView.setViewName("slide7");
+//		break;
+//		case 9:modelAndView.setViewName("slide8");
+//		break;
+//		case 10:modelAndView.setViewName("slide9");
+//		break;
+//		case 11:modelAndView.setViewName("slide3");
+//		break;
+//		}
+		modelAndView.setViewName("slide"+slideId);
 		return modelAndView;
 	}
 	

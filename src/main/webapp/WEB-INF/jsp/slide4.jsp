@@ -87,6 +87,7 @@ a {
 	display: inline-block;
 	padding: 8px 16px;
 }
+
 a:hover {
 	background-color: #ddd;
 	color: black;
@@ -109,12 +110,13 @@ a:hover {
 	<!--Step 1 : Adding HTML-->
 	<form method="post" action="validateLogin">
 		<div class="child">
-		<a href="/welcome" class="previous">&#9750; Home</a>
+			<a href="/welcome" class="previous">&#9750; Home</a>
 			<div class="imgcontainer">
 				<img src="/getImage/slide4.jpg" alt="Avatar" class="avatar">
-			</div><br><br>
-			<a href="/nextSlide/2" class="previous">&laquo; Previous</a> <a href="/nextSlide/4"
-				class="next">Next &raquo;</a>
+			</div>
+			<br>
+			<br> <a href="/nextSlide/3" class="previous">&laquo;
+				Previous</a> <a href="/nextSlide/5" class="next">Next &raquo;</a>
 		</div>
 		<div class="child">
 			<div class="container" style="background-color: #1F618D">
@@ -123,7 +125,9 @@ a:hover {
 						<center>Golden Days
 					</h1>
 				</div>
-				<p>Remember these days lockdown time. This is one of our late night talks I remeber this day we talked for the entire night sitting in the balcony of Bhavan Enclave.</p>
+				<p>Beautiful memories of lockdown I will cherish them for the rest of my life. This is one of our late
+					night talks I remember this day we talked for the entire night
+					sitting in the balcony of Bhavan Enclave.</p>
 			</div>
 		</div>
 	</form>

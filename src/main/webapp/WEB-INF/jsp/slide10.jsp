@@ -113,7 +113,7 @@ a:hover {
 			<div class="imgcontainer">
 				<img src="/getImage/slide10.jpg" alt="Avatar" class="avatar">
 			</div><br><br>
-			<a href="/nextSlide/2" class="previous">&laquo; Previous</a> <a href="/nextSlide/4"
+			<a href="/nextSlide/9" class="previous">&laquo; Previous</a> <a href="/nextSlide/11"
 				class="next">Next &raquo;</a>
 		</div>
 		<div class="child">

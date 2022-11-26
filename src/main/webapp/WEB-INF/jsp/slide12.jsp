@@ -111,10 +111,10 @@ a:hover {
 		<div class="child">
 		<a href="/welcome" class="previous">&#9750; Home</a>
 			<div class="imgcontainer">
-				<img src="/getImage/slide8.jpg" alt="Avatar" class="avatar">
+				<img src="/getImage/slide12.jpg" alt="Avatar" class="avatar">
 			</div><br><br>
-			<a href="/nextSlide/2" class="previous">&laquo; Previous</a> <a href="/nextSlide/4"
-				class="next">Next &raquo;</a>
+			<a href="/nextSlide/11" class="previous">&laquo; Previous</a> <!--a href="/nextSlide/4"
+				class="next">Next &raquo;</a -->
 		</div>
 		<div class="child">
 			<div class="container" style="background-color: #1F618D">
@@ -123,7 +123,7 @@ a:hover {
 						<center>Warrior Nini
 					</h1>
 				</div>
-				<p>First of all I am really sorry for whatever happened to you on this day I always blame me for whatever happened I knew my sister I should have protected you from her I AM REALLY REALLY SORRY NINI<br><br>Coming back to this picture I can see how hard it is for you to smile and forgot about everything happened you are the bravest and most caring girl I have ever scene. Hats off to you. </p>
+				<p>First of all I am really sorry for whatever happened to you on this day I always blame me for whatever happened I knew my sister I should have protected you from her I AM REALLY REALLY SORRY NINI<br><br>Coming back to this picture I can see how hard it is for you to smile and forgot about everything, you are the bravest and most caring girl I have ever scene. Hats off to you. </p>
 			</div>
 		</div>
 	</form>
