@@ -121,10 +121,10 @@ a:hover {
 			<div class="container" style="background-color: #1F618D">
 				<div class="containerTail" style="background-color: #154360">
 					<h1>
-						<center>Our First Day
+						<center>Lunch with the Team
 					</h1>
 				</div>
-				<p>This is for testing</p>
+				<p>Khai was here and he saw the spark in us long before we did. This is a sweet memory of a team lunch where everyone was having biriyani and tangdi kabab and you were there with your boring salad.  </p>
 			</div>
 		</div>
 	</form>
