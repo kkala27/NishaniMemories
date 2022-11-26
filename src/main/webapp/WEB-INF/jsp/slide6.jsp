@@ -87,6 +87,7 @@ a {
 	display: inline-block;
 	padding: 8px 16px;
 }
+
 a:hover {
 	background-color: #ddd;
 	color: black;
@@ -109,21 +110,23 @@ a:hover {
 	<!--Step 1 : Adding HTML-->
 	<form method="post" action="validateLogin">
 		<div class="child">
-		<a href="/welcome" class="previous">&#9750; Home</a>
+			<a href="/welcome" class="previous">&#9750; Home</a>
 			<div class="imgcontainer">
-				<img src="/getImage/slide3.jpg" alt="Avatar" class="avatar">
-			</div><br><br>
-			<a href="/nextSlide/2" class="previous">&laquo; Previous</a> <a href="/nextSlide/4"
-				class="next">Next &raquo;</a>
+				<img src="/getImage/slide6.jpg" alt="Avatar" class="avatar">
+			</div>
+			<br>
+			<br> <a href="/nextSlide/2" class="previous">&laquo;
+				Previous</a> <a href="/nextSlide/4" class="next">Next &raquo;</a>
 		</div>
 		<div class="child">
 			<div class="container" style="background-color: #1F618D">
 				<div class="containerTail" style="background-color: #154360">
 					<h1>
-						<center>Serving the enemy
+						<center>Golden Days
 					</h1>
 				</div>
-				<p>Hahahaha!!!! You remember this day lockdown just started and we went to the dell 6 office to get some office supplies and you saw Prabha's plants and you started watering them.<br><br>No buddy other then me can see this pic and understand the irony behind this. </p>
+				<p>This is again one of my attempt to look funny in a picture we look awesome in this as well though.<br><br>**Note: We have to start taking more pictures or else we will go out of memories.  </p>
+				f
 			</div>
 		</div>
 	</form>

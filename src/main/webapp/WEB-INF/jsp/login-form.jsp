@@ -16,7 +16,7 @@
 		<input type="hidden" id="profile" />
 		<div class="child">
 			<div class="imgcontainer">
-				<img src="/getImage/IMG_1646.jpeg" alt="Avatar" class="avatar">
+				<img src="/getImage/login-page.jpeg" alt="Avatar" class="avatar">
 			</div>
 		</div>
 		<div class="child">
