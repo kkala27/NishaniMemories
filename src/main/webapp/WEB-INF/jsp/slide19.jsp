@@ -111,19 +111,19 @@ a:hover {
 		<div class="child">
 		<a href="/welcome" class="previous">&#9750; Home</a>
 			<div class="imgcontainer">
-				<img src="/getImage/slide12.jpg" alt="Avatar" class="avatar">
+				<img src="/getImage/slide19.jpg" alt="Avatar" class="avatar">
 			</div><br><br>
-			<a href="/nextSlide/11" class="previous">&laquo; Previous</a> <a href="/nextSlide/13"
+			<a href="/nextSlide/18" class="previous">&laquo; Previous</a> <a href="/nextSlide/20"
 				class="next">Next &raquo;</a>
 		</div>
 		<div class="child">
 			<div class="container" style="background-color: #1F618D">
 				<div class="containerTail" style="background-color: #154360">
 					<h1>
-						<center>Warrior Nini
+						<center>Back to Bangalore 2021
 					</h1>
 				</div>
-				<p>First of all I am really sorry for whatever happened to you on this day I always blame me for whatever happened I knew my sister I should have protected you from her I AM REALLY REALLY SORRY NINI<br><br>Coming back to this picture I can see how hard it is for you to smile and forgot about everything, you are the bravest and most caring girl I have ever scene. Hats off to you. </p>
+<p>And we were back to Bangalore after Corona crisis, Batra ki shadi and Papa ki surgery we landed in Days Suits.<br>Not very great memories though but trust me We have learned so much from them.<br>BTW look at this beautiful picture we both look drop dead gorgeus in this isn't it. It was Rakshabandhan 2021 we were going to Bhaiya Bhabi's house and you ordered this Kurta for me and we were twining as always.   </p>
 			</div>
 		</div>
 	</form>

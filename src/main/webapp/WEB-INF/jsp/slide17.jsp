@@ -111,19 +111,19 @@ a:hover {
 		<div class="child">
 		<a href="/welcome" class="previous">&#9750; Home</a>
 			<div class="imgcontainer">
-				<img src="/getImage/slide12.jpg" alt="Avatar" class="avatar">
+				<img src="/getImage/slide17.jpg" alt="Avatar" class="avatar">
 			</div><br><br>
-			<a href="/nextSlide/11" class="previous">&laquo; Previous</a> <a href="/nextSlide/13"
+			<a href="/nextSlide/16" class="previous">&laquo; Previous</a> <a href="/nextSlide/18"
 				class="next">Next &raquo;</a>
 		</div>
 		<div class="child">
 			<div class="container" style="background-color: #1F618D">
 				<div class="containerTail" style="background-color: #154360">
 					<h1>
-						<center>Warrior Nini
+						<center>Happy Birthday To Shani
 					</h1>
 				</div>
-				<p>First of all I am really sorry for whatever happened to you on this day I always blame me for whatever happened I knew my sister I should have protected you from her I AM REALLY REALLY SORRY NINI<br><br>Coming back to this picture I can see how hard it is for you to smile and forgot about everything, you are the bravest and most caring girl I have ever scene. Hats off to you. </p>
+<p>This was one of my best birthdays ever and all because of you, all the preparations were jaw-dropping cake was awesome decorations were brilliant and you managed to do all that in a small hotel. You really made it so special.</p>
 			</div>
 		</div>
 	</form>

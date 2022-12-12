@@ -111,19 +111,19 @@ a:hover {
 		<div class="child">
 		<a href="/welcome" class="previous">&#9750; Home</a>
 			<div class="imgcontainer">
-				<img src="/getImage/slide12.jpg" alt="Avatar" class="avatar">
+				<img src="/getImage/slide20.JPG" alt="Avatar" class="avatar">
 			</div><br><br>
-			<a href="/nextSlide/11" class="previous">&laquo; Previous</a> <a href="/nextSlide/13"
+			<a href="/nextSlide/19" class="previous">&laquo; Previous</a> <a href="/nextSlide/21"
 				class="next">Next &raquo;</a>
 		</div>
 		<div class="child">
 			<div class="container" style="background-color: #1F618D">
 				<div class="containerTail" style="background-color: #154360">
 					<h1>
-						<center>Warrior Nini
+						<center>Go Goa Gone
 					</h1>
 				</div>
-				<p>First of all I am really sorry for whatever happened to you on this day I always blame me for whatever happened I knew my sister I should have protected you from her I AM REALLY REALLY SORRY NINI<br><br>Coming back to this picture I can see how hard it is for you to smile and forgot about everything, you are the bravest and most caring girl I have ever scene. Hats off to you. </p>
+<p>After so many fights and a stash of disappointments this trip happened and I am glad it did.<br> Sometimes when I look at the photos like this I wonder we are so perfect for each other yes our thoughts are not alike but to hell with that we are still the best couple. Trust me Nini we have the power to overcome every obstacle of life. </p>
 			</div>
 		</div>
 	</form>

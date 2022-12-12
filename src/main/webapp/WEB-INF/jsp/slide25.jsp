@@ -111,19 +111,21 @@ a:hover {
 		<div class="child">
 		<a href="/welcome" class="previous">&#9750; Home</a>
 			<div class="imgcontainer">
-				<img src="/getImage/slide12.jpg" alt="Avatar" class="avatar">
+				<img src="/getImage/slide25.jpg" alt="Avatar" class="avatar">
 			</div><br><br>
-			<a href="/nextSlide/11" class="previous">&laquo; Previous</a> <a href="/nextSlide/13"
-				class="next">Next &raquo;</a>
+			<a href="/nextSlide/22" class="previous">&laquo; Previous</a> <!--  a href="/nextSlide/11"
+				class="next">Next &raquo;</a>-->
 		</div>
 		<div class="child">
 			<div class="container" style="background-color: #1F618D">
 				<div class="containerTail" style="background-color: #154360">
 					<h1>
-						<center>Warrior Nini
+						<center>And We Are Married
 					</h1>
 				</div>
-				<p>First of all I am really sorry for whatever happened to you on this day I always blame me for whatever happened I knew my sister I should have protected you from her I AM REALLY REALLY SORRY NINI<br><br>Coming back to this picture I can see how hard it is for you to smile and forgot about everything, you are the bravest and most caring girl I have ever scene. Hats off to you. </p>
+<p>Ahhh After a small yet large(in its own way) relationship of approx 2 years we got married on 1st Dec 2021.<br><br> I know you always have a complaint that I have ruined this relationship at a very early stage but trust me for me it was a roller coaster. When it started I was under the impression that I am ready for a serious relationship but I was not I was still a child who dosen't care about others and wanted to stay in his own comfort zone but as the relationship started progressing I tend to realize there is a lot in me to change to make this work and out of shear stress I told my parents about you to put a label on it or you can say to make it official.<br><br>
+This was my pathetic way to save our relationship since I knew once everything is official I will do whatever I can to save it and thats what I tried to do.  know i failed majorly on every aspect of the relationship but my only success was this day.<br><br>
+Lets live a long and a beautiful life together and I know I have to keep working hard so that one day I can say "Kshitiz Kala is the best boyfriend ever....."  </p>
 			</div>
 		</div>
 	</form>

@@ -111,19 +111,19 @@ a:hover {
 		<div class="child">
 		<a href="/welcome" class="previous">&#9750; Home</a>
 			<div class="imgcontainer">
-				<img src="/getImage/slide12.jpg" alt="Avatar" class="avatar">
+				<img src="/getImage/slide15.HEIC" alt="Avatar" class="avatar">
 			</div><br><br>
-			<a href="/nextSlide/11" class="previous">&laquo; Previous</a> <a href="/nextSlide/13"
+			<a href="/nextSlide/14" class="previous">&laquo; Previous</a> <a href="/nextSlide/16"
 				class="next">Next &raquo;</a>
 		</div>
 		<div class="child">
 			<div class="container" style="background-color: #1F618D">
 				<div class="containerTail" style="background-color: #154360">
 					<h1>
-						<center>Warrior Nini
+						<center>The Pink Teddy
 					</h1>
 				</div>
-				<p>First of all I am really sorry for whatever happened to you on this day I always blame me for whatever happened I knew my sister I should have protected you from her I AM REALLY REALLY SORRY NINI<br><br>Coming back to this picture I can see how hard it is for you to smile and forgot about everything, you are the bravest and most caring girl I have ever scene. Hats off to you. </p>
+<p>Hahaha this one is for the teddy its again a sweet story, We were in Gopi's home at that time and had a very bad fight in the night (horrible days) and when I wake up in the morning I just wanted something to calm you down I  went the store and started looking and then I saw this teddy and I was sure this will surely make you happy. </p>
 			</div>
 		</div>
 	</form>
