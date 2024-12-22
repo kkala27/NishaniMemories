@@ -39,6 +39,7 @@ public class NewLifeFilter implements Filter {
 			throws IOException, ServletException {
 		HttpServletRequest request = (HttpServletRequest) servletRequest;
 		HttpServletResponse response = (HttpServletResponse) servletResponse;
+		log.info("Active profile detail"+activeProfile);
 		if(request.getSession().getAttribute("profile")==null) {
 			request.getSession().setAttribute("profile", activeProfile);
 		}
