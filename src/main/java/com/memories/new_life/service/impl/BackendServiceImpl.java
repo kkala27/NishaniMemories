@@ -1,5 +1,8 @@
 package com.memories.new_life.service.impl;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.sql.Timestamp;
 import java.text.DecimalFormat;
 import java.util.Arrays;
@@ -53,6 +56,9 @@ public class BackendServiceImpl implements BackendService {
 
 	@Value("${send.message}")
 	private boolean isSendMessage;
+	
+	@Value("${file.path}")
+	private String filePath;
 
 	@Value("${test.otp}")
 	private String testOtp;
@@ -74,8 +80,15 @@ public class BackendServiceImpl implements BackendService {
 
 	@Override
 	public byte[] getFile(String fileName) {
-		byte[] data = adapter.getFile(fileName);
-		return data;
+		//byte[] data = adapter.getFile(fileName);
+		File file = new File(filePath+"/"+fileName);
+		try {
+			return Files.readAllBytes(file.toPath());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		};
+		return null;
 	}
 
 	@Override
@@ -98,6 +111,7 @@ public class BackendServiceImpl implements BackendService {
 			repo.save(x);
 		});
 		ValidateOtpEntity entity = new ValidateOtpEntity();
+		log.info("Otp for the user :"+otp);
 		entity.setOtp(otp);
 		entity.setPhoneNumber(num);
 		entity.setIsValid(true);
